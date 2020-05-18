@@ -74,7 +74,7 @@ export const Grid: React.FC<GridProps> = React.memo(({ rows, columns, options, a
   return (
     <AutoSizerWrapper onResize={onResize}>
       {size => (
-        <GridRoot ref={gridRootRef} options={internalOptions} style={{ width: size.width, height: size.height }} tabIndex={-1}>
+        <GridRoot ref={gridRootRef} options={internalOptions} style={{ width: size.width, height: size.height }} tabIndex={0}>
           <ApiContext.Provider value={apiRef}>
             <ColumnsContainer ref={colRef}>
               <ColumnsHeader

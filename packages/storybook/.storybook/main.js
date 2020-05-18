@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   stories: ['../src/stories/**/*.stories.*'],
   addons: [ '@storybook/addon-storysource', '@storybook/addon-actions/register'],
@@ -8,6 +10,9 @@ module.exports = {
       use: [
         {
           loader: require.resolve('ts-loader'),
+          options: {
+            getCustomTransformers: path.join(__dirname, './webpack.ts-transformers.js')
+          }
         },
         // Optional
         {

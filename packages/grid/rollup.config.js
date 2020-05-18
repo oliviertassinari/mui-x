@@ -4,7 +4,8 @@ import cleaner from 'rollup-plugin-cleaner';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import { terser } from 'rollup-plugin-terser';
 
-// dev build if watching, prod build if not
+import { getCustomTransformers } from './webpack.ts-transformers';
+
 const production = !process.env.ROLLUP_WATCH;
 export default {
   input: 'src/index.ts',
@@ -27,7 +28,9 @@ export default {
       cleaner({
         targets: ['./dist/'],
       }),
-    typescript(),
+    typescript({
+      transformers: [getCustomTransformers],
+    }),
     !production && sourceMaps(),
     production && terser(),
   ],

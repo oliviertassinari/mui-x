@@ -8,7 +8,13 @@
     "strict": true,
     "outDir": "./dist",
     "target": "es6",
-    "sourceMap": true
+    "sourceMap": true,
+    "plugins": [
+      {
+        "transform": "typescript-plugin-styled-components",
+        "type": "config"
+      }
+    ]
   },
   "include": ["src"],
   "exclude": [
