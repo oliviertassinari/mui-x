@@ -4,7 +4,7 @@ const createDOM = require('./createDOM');
 
 process.browser = true;
 
-require('@babel/register')({ extensions: ['.js', '.jsx', '.ts', '.tsx'] });
+require('@babel/register')({ extensions: ['.js', '.ts', '.tsx'] });
 
 // Enable missing act warnings: https://github.com/facebook/react/blob/v16.13.1/packages/react-reconciler/src/ReactFiberHooks.js#L965
 // TODO: Revisit once https://github.com/facebook/react/issues/15439 is resolved.

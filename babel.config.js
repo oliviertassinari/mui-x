@@ -58,6 +58,7 @@ module.exports = {
           'babel-plugin-module-resolver',
           {
             root: ['./'],
+            extensions: ['.js', '.ts', '.tsx'],
             alias: defaultAlias,
           },
         ],
@@ -70,6 +71,7 @@ module.exports = {
           'babel-plugin-module-resolver',
           {
             root: ['./'],
+            extensions: ['.js', '.ts', '.tsx'],
             alias: defaultAlias,
           },
         ],

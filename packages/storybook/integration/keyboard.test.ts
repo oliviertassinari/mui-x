@@ -5,64 +5,26 @@ describe('Keyboard Navigation', () => {
   let browser;
   const waitFnOptions = { timeout: 500 };
 
-  beforeAll(async (done) => {
+  beforeAll(async () => {
     browser = await startBrowser();
-    done();
   });
-  beforeEach(async (done) => {
+
+  beforeEach(async () => {
     page = await getStoryPage(browser, '/story/x-grid-tests-columns--small-col-sizes', true);
     await page.keyboard.press('Tab');
     await page.keyboard.press('Tab');
     await page.waitFor(100);
-    done();
   });
 
-  afterEach(async (done) => {
+  afterEach(async () => {
     await page.close();
-    done();
   });
 
-  afterAll(async (done) => {
+  afterAll(async () => {
     await browser.close();
-    done();
   });
 
-  test('Cell navigation with arrows ', async (done) => {
-    await page.keyboard.press('ArrowRight');
-    await page.waitForFunction(activeCell, waitFnOptions, 0, 1);
-
-    await page.keyboard.press('ArrowRight');
-    await page.waitForFunction(activeCell, waitFnOptions, 0, 2);
-
-    await page.keyboard.press('ArrowRight');
-    await page.waitForFunction(activeCell, waitFnOptions, 0, 3);
-
-    await page.keyboard.press('ArrowDown');
-    await page.waitForFunction(activeCell, waitFnOptions, 1, 3);
-
-    await page.keyboard.press('ArrowDown');
-    await page.waitForFunction(activeCell, waitFnOptions, 2, 3);
-
-    await page.keyboard.press('ArrowLeft');
-    await page.waitForFunction(activeCell, waitFnOptions, 2, 2);
-
-    await page.keyboard.press('ArrowUp');
-    await page.waitForFunction(activeCell, waitFnOptions, 1, 2);
-
-    done();
-  });
-
-  test('Home / End navigation', async (done) => {
-    await page.keyboard.press('End');
-    await page.waitForFunction(activeCell, waitFnOptions, 0, 19);
-
-    await page.keyboard.press('Home');
-    await page.waitForFunction(activeCell, waitFnOptions, 0, 0);
-
-    done();
-  });
-
-  test('CTRL Home / End navigation ', async (done) => {
+  test('CTRL Home / End navigation ', async () => {
     await page.keyboard.down('Control');
     await page.waitFor(100);
     await page.keyboard.press('End');
@@ -72,21 +34,18 @@ describe('Keyboard Navigation', () => {
     await page.waitFor(100);
     await page.keyboard.up('Control');
     await page.waitForFunction(activeCell, waitFnOptions, 0, 0);
-
-    done();
   });
 
-  test('CTRL A to select all rows', async (done) => {
+  test('CTRL A to select all rows', async () => {
     await page.keyboard.down('Control');
     await page.waitFor(100);
     await page.keyboard.press('a');
     await page.waitFor(100);
     const imageEnd = await page.screenshot();
     expect(imageEnd).toMatchImageSnapshot();
-    done();
   });
 
-  test('Shift space + arrows to select rows ', async (done) => {
+  test('Shift space + arrows to select rows ', async () => {
     await page.keyboard.down('Shift');
     await page.waitFor(100);
     await page.keyboard.press('Space');
@@ -101,10 +60,9 @@ describe('Keyboard Navigation', () => {
     const selectedScreen = await page.screenshot();
 
     expect(selectedScreen).toMatchImageSnapshot();
-    done();
   });
 
-  test('Next/Previous page', async (done) => {
+  test('Next/Previous page', async () => {
     await page.keyboard.press('Space');
     await page.waitForFunction(activeCell, waitFnOptions, 15, 0);
 
@@ -113,11 +71,9 @@ describe('Keyboard Navigation', () => {
 
     await page.keyboard.press('PageUp');
     await page.waitForFunction(activeCell, waitFnOptions, 15, 0);
-
-    done();
   });
 
-  test('Copy to clipboard', async (done) => {
+  test('Copy to clipboard', async () => {
     await page.keyboard.down('Shift');
     await page.waitFor(100);
     await page.keyboard.press('Space');
@@ -148,6 +104,5 @@ describe('Keyboard Navigation', () => {
         '0, 17\n' +
         '0, 18\n',
     );
-    done();
   });
 });

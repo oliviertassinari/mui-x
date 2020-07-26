@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 
 const browserStack = {
@@ -73,6 +74,7 @@ module.exports = function setKarmaConfig(config) {
       },
       resolve: {
         extensions: ['.js', '.ts', '.tsx'],
+        modules: [path.join(__dirname, '../'), 'node_modules'],
         alias: {
           // yarn alias for `pretty-format@3`
           // @testing-library/dom -> pretty-format@25

@@ -19,24 +19,26 @@ export default {
 
 export function SmallColSizes() {
   const data = useData(100, 20);
-  const transformColSizes = (columns: ColDef[]) => columns.map((c) => ({ ...c, width: 60 }));
+  const transformColSizes = (columns: ColDef[]) =>
+    columns.map((column) => ({ ...column, width: 60 }));
 
   return <XGrid rows={data.rows} columns={transformColSizes(data.columns)} />;
 }
 
 export function VerySmallColSizes() {
   const data = useData(100, 20);
-  const transformColSizes = (columns: ColDef[]) => columns.map((c) => ({ ...c, width: 50 }));
+  const transformColSizes = (columns: ColDef[]) =>
+    columns.map((column) => ({ ...column, width: 50 }));
   return <XGrid rows={data.rows} columns={transformColSizes(data.columns)} />;
 }
 export function ColumnDescriptionTooltip() {
   const data = useData(100, 20);
   const transformColSizes = (columns: ColDef[]) =>
-    columns.map((c) => {
-      if (c.field === 'currencyPair') {
-        return { ...c, width: 80, description: 'This is the currency pair column' };
+    columns.map((column) => {
+      if (column.field === 'currencyPair') {
+        return { ...column, width: 80, description: 'This is the currency pair column' };
       }
-      return c;
+      return column;
     });
 
   return <XGrid rows={data.rows} columns={transformColSizes(data.columns)} />;
