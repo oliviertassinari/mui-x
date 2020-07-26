@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { isFunction } from '../../utils/utils';
 
-const forceDebug = localStorage.getItem('DEBUG') != null;
+// const forceDebug = localStorage.getItem('DEBUG') != null;
+const forceDebug = false;
 const isDebugging = process.env.NODE_ENV !== 'production' || forceDebug;
 
 export interface Logger {
