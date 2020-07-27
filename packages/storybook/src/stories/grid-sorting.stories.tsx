@@ -309,7 +309,7 @@ export const SortedEventsApi = () => {
     <React.Fragment>
       <div>
         <h1 style={{ fontSize: '16pt' }}>Triggered Events in order </h1>
-        <ol>{...loggedEvents.map((evt, idx) => <li key={evt + idx}>{evt}</li>)}</ol>
+        <ol>{loggedEvents.map((evt, idx) => <li key={evt + idx}>{evt}</li>)}</ol>
       </div>
       <div className="grid-container">
         <XGrid rows={rows} columns={cols} apiRef={apiRef} />
