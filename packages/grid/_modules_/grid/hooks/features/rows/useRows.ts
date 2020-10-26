@@ -93,8 +93,9 @@ export const useRows = (rows: RowsProp, apiRef: ApiRef): RowModel[] => {
         if (partialRow.id == null) {
           throw new Error('Material-UI: All rows need an id.');
         }
-        // New row?
+
         if (!getRowFromId(partialRow.id)) {
+          // New row?
           addedRows.push(partialRow as RowModel);
           return;
         }
