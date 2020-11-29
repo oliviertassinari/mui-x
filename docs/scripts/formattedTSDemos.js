@@ -22,7 +22,7 @@ const { fixBabelGeneratorIssues, fixLineEndings } = require('./helpers');
 const tsConfig = typescriptToProptypes.loadConfig(path.resolve(__dirname, '../tsconfig.json'));
 
 const unwrap = babel.createConfigItem(
-  require('../node_modules/@material-ui/monorepo/packages/babel-plugin-unwrap-createstyles'),
+  require('../../node_modules/@material-ui/monorepo-docs/packages/babel-plugin-unwrap-createstyles'),
 );
 
 const babelConfig = {

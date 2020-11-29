@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 // const withTM = require('next-transpile-modules')(['@material-ui/monorepo']);
-const pkg = require('./node_modules/@material-ui/monorepo/package.json');
+const pkg = require('../node_modules/@material-ui/monorepo-docs/package.json');
 const { findPages } = require('./src/modules/utils/find');
 const { LANGUAGES, LANGUAGES_SSR } = require('./src/modules/constants');
 
@@ -61,8 +61,8 @@ module.exports = {
     }
 
     const includesMonorepo = [
-      /(@material-ui[\\/]monorepo)$/,
-      /(@material-ui[\\/]monorepo)[\\/](?!.*node_modules)/,
+      /(@material-ui[\\/]monorepo-docs)$/,
+      /(@material-ui[\\/]monorepo-docs)[\\/](?!.*node_modules)/,
     ];
 
     if (config.externals) {

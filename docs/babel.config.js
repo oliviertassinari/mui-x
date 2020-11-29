@@ -16,13 +16,13 @@ const alias = {
   '@material-ui/x-grid': '../packages/grid/x-grid/src',
   '@material-ui/x-license': '../packages/x-license/src',
   // Help in the event npm and git are significantly desynchronized.
-  '@material-ui/core': './node_modules/@material-ui/monorepo/packages/material-ui/src',
-  '@material-ui/styles': './node_modules/@material-ui/monorepo/packages/material-ui-styles/src',
-  '@material-ui/docs': './node_modules/@material-ui/monorepo/packages/material-ui-docs/src',
-  '@material-ui/lab': './node_modules/@material-ui/monorepo/packages/material-ui-lab/src',
-  docs: './node_modules/@material-ui/monorepo/docs',
+  '@material-ui/core': '../node_modules/@material-ui/monorepo-docs/packages/material-ui/src',
+  '@material-ui/styles': '../node_modules/@material-ui/monorepo-docs/packages/material-ui-styles/src',
+  '@material-ui/docs': '../node_modules/@material-ui/monorepo-docs/packages/material-ui-docs/src',
+  '@material-ui/lab': '../node_modules/@material-ui/monorepo-docs/packages/material-ui-lab/src',
+  docs: '../node_modules/@material-ui/monorepo-docs/docs',
   docsx: './',
-  modules: './node_modules/@material-ui/monorepo/modules',
+  modules: '../node_modules/@material-ui/monorepo-docs/modules',
 };
 
 const { version: transformRuntimeVersion } = fse.readJSONSync(

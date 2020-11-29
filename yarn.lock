@@ -3430,9 +3430,9 @@
     prop-types "^15.7.2"
     react-is "^16.8.0"
 
-"@material-ui/monorepo@https://github.com/mui-org/material-ui.git#master":
+"@material-ui/monorepo-docs@https://github.com/mui-org/material-ui.git#master":
   version "4.11.1"
-  resolved "https://github.com/mui-org/material-ui.git#b8092ce09e164a1cb2fec2f3a5b6aa6e2dc6cbbd"
+  resolved "https://github.com/mui-org/material-ui.git#587a51f302da6a6b66b71ce5b3a4c5a59d256fc4"
 
 "@material-ui/monorepo@https://github.com/mui-org/material-ui.git#next":
   version "5.0.0-alpha.16"
