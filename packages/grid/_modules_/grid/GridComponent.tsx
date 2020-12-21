@@ -66,6 +66,8 @@ export const GridComponent = React.forwardRef<HTMLDivElement, GridComponentProps
     const apiRef = useApiRef(props.apiRef);
     const [gridState] = useGridState(apiRef);
 
+    console.log('gridState.columns', gridState.columns)
+
     const internalOptions = useOptionsProp(apiRef, props);
 
     useLoggerFactory(internalOptions.logger, internalOptions.logLevel);
