@@ -298,7 +298,6 @@ export function useGridEditRows(apiRef: GridApiRef) {
         );
         commitParams.props.value = '';
         apiRef.current.publishEvent(GRID_CELL_EDIT_PROPS_CHANGE_COMMITTED, commitParams, event);
-        apiRef.current.publishEvent(GRID_CELL_EDIT_EXIT, params, event);
       }
       if (isEditMode && isCellEditCommitKeys(event.key)) {
         const cellCommitParams = apiRef.current.getEditCellPropsParams(params.id, params.field);
