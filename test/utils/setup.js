@@ -1,6 +1,6 @@
 const formatUtil = require('format-util');
 const Mocha = require('mocha');
-const createDOM = require('@material-ui/monorepo/test/utils/createDOM');
+const createDOM = require('@mui/monorepo/test/utils/createDOM');
 
 require('@babel/register')({
   extensions: ['.js', '.ts', '.tsx'],
