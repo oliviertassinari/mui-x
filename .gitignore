@@ -1,8 +1,6 @@
 # The best pattern to follow is ignoring editor files in a global .gitignore configuration file.
 # However, in order to prevent issues, editor files are ignored here.
 .idea
-.vscode
-
 __diff_output__
 .DS_STORE
 *.log
