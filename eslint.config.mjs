@@ -10,6 +10,7 @@ import eslintPluginConsistentName from 'eslint-plugin-consistent-default-export-
 import eslintPluginJsdoc from 'eslint-plugin-jsdoc';
 import eslintPluginMuiX from 'eslint-plugin-mui-x';
 import { defineConfig } from 'eslint/config';
+import { fixupPluginRules } from '@eslint/compat';
 import * as path from 'node:path';
 import * as url from 'node:url';
 import remarkConfig from './.remarkrc.mjs';
@@ -126,7 +127,7 @@ export default defineConfig(
     plugins: {
       jsdoc: eslintPluginJsdoc,
       'mui-x': eslintPluginMuiX,
-      'consistent-default-export-name': eslintPluginConsistentName,
+      'consistent-default-export-name': fixupPluginRules(eslintPluginConsistentName),
     },
     settings: {
       'import/resolver': {
@@ -376,7 +377,7 @@ export default defineConfig(
       'docs/data/**/{css,system,tailwind}/*',
     ],
     plugins: {
-      'consistent-default-export-name': eslintPluginConsistentName,
+      'consistent-default-export-name': fixupPluginRules(eslintPluginConsistentName),
     },
     rules: {
       'consistent-default-export-name/default-export-match-filename': ['error'],

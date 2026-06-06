@@ -49,6 +49,7 @@ function ComponentTag(props) {
   return (
     <Stack sx={{ gap: 0.5 }}>
       {components.map((c, key) => (
+        <>
         <div>
           <Typography
             key={key}
@@ -65,6 +66,7 @@ function ComponentTag(props) {
           </Typography>
           <PlanIcon plan={props.plan} />
         </div>
+        </>
       ))}
     </Stack>
   );
